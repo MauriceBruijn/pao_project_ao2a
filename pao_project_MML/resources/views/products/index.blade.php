@@ -8,7 +8,7 @@
 
                 <div class="panel-body">
                     <div class="box_products">
-						<div class="products_title"><i>PRODUCTEN</i><a href="product/add" class="glyphicon glyphicon-plus"></a></div>
+						<div class="products_title"><i>PRODUCTEN</i></div>
 						
 						<table class="table table-reflow">
 						<tr>
@@ -21,7 +21,7 @@
 						@foreach($products as $product)
 						<tr>
 							<td>{{$product->id}}</td>
-							<td><a href="products/{{$product->id}}">{{$product->name}}</a></td>
+							<td><a href="product/{{$product->id}}">{{$product->name}}</a></td>
 							<td>{{$product->brand}}</td>
 							<td>{{$product->color}}</td>
 							<td>{{$product->price}}</td>

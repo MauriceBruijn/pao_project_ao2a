@@ -19,10 +19,10 @@ class ProductsController extends Controller
      * Show method in ProductsController
      * 
      */
-	public function show($products)
+	public function product($products)
 	{
-		$products = Products::where('id', $products)->get();
+		$product = Products::where('id', $products)->get();
 		
-		return view('products.show', compact('product'));
+		return view('products.product', compact('product'));
 	}
 }
