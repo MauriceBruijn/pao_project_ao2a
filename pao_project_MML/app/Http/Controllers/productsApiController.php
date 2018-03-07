@@ -16,33 +16,16 @@ class productsApiController extends Controller
 	
 	public function readProduct($something)
 	{
-
-		if(\Request::is('api/products/id/*'))
-		{
-			$product = Products::where('id', $something)->get();
-			
-			return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
-		}
+		$request_items = ['id', 'name', 'brand', 'color'];
 		
-		if(\Request::is('api/products/name/*'))
+		foreach($request_items as $request_item)
 		{
-			$product = Products::where('name', $something)->get();
-			
-			return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
-		}
-		
-		if(\Request::is('api/products/brand/*'))
-		{
-			$product = Products::where('brand', $something)->get();
-			
-			return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
-		}
-		
-		if(\Request::is('api/products/color/*'))
-		{
-			$product = Products::where('color', $something)->get();
-			
-			return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
+			if(\Request::is('api/products/'. $request_item .'/*'))
+			{
+				$product = Products::where($request_item, $something)->get();
+				
+				return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
+			}
 		}
 		
 	}
