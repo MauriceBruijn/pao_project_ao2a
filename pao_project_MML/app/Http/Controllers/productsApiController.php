@@ -27,6 +27,10 @@ class productsApiController extends Controller
 				return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
 			}
 		}
+	}
+	
+	public function addProduct($id)
+	{
 		
 	}
 	
