@@ -14,4 +14,7 @@ Route::get('/', 'ProductsController@index');
 
 
 Route::get('/products', 'ProductsController@index');
-Route::get('/product/{id}', 'ProductsController@product');
+Route::get('/product/get/{id}', 'ProductsController@product');
+Route::get('/product/new', 'ProductsController@newProduct');
+
+Route::post('/add/product', 'ProductsController@add');

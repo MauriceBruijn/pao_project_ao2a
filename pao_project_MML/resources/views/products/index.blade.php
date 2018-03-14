@@ -21,7 +21,7 @@
 						@foreach($products as $product)
 						<tr>
 							<td>{{$product->id}}</td>
-							<td><a href="product/{{$product->id}}">{{$product->name}}</a></td>
+							<td><a href="product/get/{{$product->id}}">{{$product->name}}</a></td>
 							<td>{{$product->brand}}</td>
 							<td>{{$product->color}}</td>
 							<td>{{$product->price}}</td>

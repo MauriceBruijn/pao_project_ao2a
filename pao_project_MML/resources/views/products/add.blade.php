@@ -13,7 +13,14 @@
 						
 						<form method="post" action="{{url('/add/product')}}" class="form-horizontal">
 							{{csrf_field()}}
-							
+
+							<div class="form-group">
+								<label for="name" class="col-md-4 control-label">NAAM</label>
+								<div class="col-md-6">
+									<input type="text" name="name" class="form-control" id="name" required>
+								</div>
+							</div>
+
 							<div class="form-group">
 								<label for="brand" class="col-md-4 control-label">MERK</label>
 								<div class="col-md-6">
@@ -32,6 +39,20 @@
 								<label for="price" class="col-md-4 control-label">PRIJS</label>
 								<div class="col-md-6">
 									<input type="text" name="price" class="form-control" id="price" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="img" class="col-md-4 control-label">AFBEELDING</label>
+								<div class="col-md-6">
+									<input type="text" name="img" class="form-control" id="img" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="description" class="col-md-4 control-label">BESCHRIJVING</label>
+								<div class="col-md-6">
+									<input type="text" name="description" class="form-control" id="description" required>
 								</div>
 							</div>
 							
