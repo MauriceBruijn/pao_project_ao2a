@@ -25,6 +25,7 @@
 							<td>{{$product->brand}}</td>
 							<td>{{$product->color}}</td>
 							<td>{{$product->price}}</td>
+							<td><a href="delete/product/{{$product->id}}"><button type="submit" class="btn btn-danger">X</button></a></td>
 						</tr>
 						@endforeach
 						</table>

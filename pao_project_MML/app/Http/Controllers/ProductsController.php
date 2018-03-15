@@ -33,7 +33,6 @@ class ProductsController extends Controller
 
     public function add(Request $request)
     {
-       $products = Products::all();
        $newProduct = new Products();
 
         $newProduct->name = $request->name;
@@ -44,7 +43,15 @@ class ProductsController extends Controller
         $newProduct->description = $request->description;
 
         $newProduct->save();
-
-        return view ('products.index', compact('products'));
+		
+		return redirect()->to('/');
+    }
+	
+	public function deleteProduct(Request $request, $product)
+    {
+		$product = Products::find($product);
+		$product->delete($request->all());
+		
+		return redirect()->to('/');
     }
 }

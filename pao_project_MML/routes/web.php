@@ -18,3 +18,5 @@ Route::get('/product/get/{id}', 'ProductsController@product');
 Route::get('/product/new', 'ProductsController@newProduct');
 
 Route::post('/add/product', 'ProductsController@add');
+
+Route::delete('/delete/product/{id}', 'ProductsController@delete');
