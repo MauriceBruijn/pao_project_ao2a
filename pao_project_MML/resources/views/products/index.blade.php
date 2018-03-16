@@ -17,6 +17,7 @@
 							<th>MERK</th>
 							<th>KLEUR</th>
 							<th>PRIJS</th>
+							<th></th>
 						</tr>
 						@foreach($products as $product)
 						<tr>

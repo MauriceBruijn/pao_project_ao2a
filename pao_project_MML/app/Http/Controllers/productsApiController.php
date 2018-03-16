@@ -14,7 +14,7 @@ class productsApiController extends Controller
 		return Response::json(Products::all(), 200, array(), JSON_PRETTY_PRINT);
 	}
 	
-	public function readProduct($something)
+	public function readProduct($something, $attribute)
 	{
 		$request_items = ['id', 'name', 'brand', 'color'];
 		
@@ -22,7 +22,7 @@ class productsApiController extends Controller
 		{
 			if(\Request::is('api/products/'. $request_item .'/*'))
 			{
-				$product = Products::where($request_item, $something)->get();
+				$product = Products::where($request_item, $attribute)->get();
 				
 				return Response::json($product, 200, array(), JSON_PRETTY_PRINT);
 			}

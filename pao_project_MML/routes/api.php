@@ -19,7 +19,4 @@ use Illuminate\Http\Request;
 
 Route::get('products', 'ProductsApiController@index');
 
-Route::get('products/id/{id}', 'ProductsApiController@readProduct');
-Route::get('products/name/{name}', 'ProductsApiController@readProduct');
-Route::get('products/brand/{brand}', 'ProductsApiController@readProduct');
-Route::get('products/color/{color}', 'ProductsApiController@readProduct');
+Route::get('products/{attribute}/{id}', 'ProductsApiController@readProduct');
