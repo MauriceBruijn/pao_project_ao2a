@@ -18,6 +18,7 @@
 							<th>KLEUR</th>
 							<th>PRIJS</th>
 							<th></th>
+							<th></th>
 						</tr>
 						@foreach($products as $product)
 						<tr>
@@ -26,6 +27,8 @@
 							<td>{{$product->brand}}</td>
 							<td>{{$product->color}}</td>
 							<td>{{$product->price}}</td>
+
+							<td><a href="product/edit/{{$product->id}}" class="glyphicon glyphicon-pencil"> </a></td>
 							
 							<td>
 								<form action="delete/product/{{$product->id}}" method="post">

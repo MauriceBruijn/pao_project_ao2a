@@ -10,5 +10,5 @@ class Products extends Model
 	protected $primaryKey = 'id';
 	public $incrementing = false;
 	protected $fillable = ['name', 'brand', 'color', 'price', 'img', 'description'];
-	public $timestamps = true;
+	public $timestamps = false;
 }

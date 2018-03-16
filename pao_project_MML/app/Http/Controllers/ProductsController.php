@@ -13,6 +13,12 @@ class ProductsController extends Controller
 		$products = Products::all();
 		return view('products.index', compact('products'));
 	}
+
+    public function edit($id)
+    {
+        $products = Products::where('id', $id)->get();
+        return view('products.edit', compact('products'));
+    }
 	
 	/**
      * 
@@ -53,5 +59,13 @@ class ProductsController extends Controller
 		$product->delete($request->all());
 		
 		return redirect()->to('/');
+    }
+
+    public function editProduct(Request $request, $product)
+    {
+        $product = Products::find($product);
+        $product->update($request->all());
+
+        return redirect()->to('/');
     }
 }
