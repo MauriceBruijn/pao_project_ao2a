@@ -55,7 +55,7 @@ class ProductsController extends Controller
 			return redirect()->to('/');
 		}
 		
-       $newProduct = new Products();
+		$newProduct = new Products();
 
         $newProduct->name = $request->name;
         $newProduct->brand = $request->brand;

@@ -47,6 +47,13 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
 							<li><a href="{{ route('register') }}">Register</a></li>
 						@else
+							@if (Auth::user()->rank >= 1)
+								<li>
+									<a href="{{ url('/aPanel') }}">
+										Admin-panel
+									</a>
+								</li>
+							@endif
 						
 							<li>
 								<a href="{{ route('logout') }}"

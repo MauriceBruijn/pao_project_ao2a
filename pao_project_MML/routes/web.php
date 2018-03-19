@@ -12,7 +12,6 @@
 */
 Auth::routes();
 
-
 Route::get('/', 'ProductsController@index');
 
 Route::get('/products', 'ProductsController@index');
@@ -24,3 +23,11 @@ Route::post('/add/product', 'ProductsController@add');
 
 Route::patch('/edit/{id}', 'ProductsController@editProduct');
 Route::delete('/delete/product/{id}', 'ProductsController@deleteProduct');
+
+
+Route::get('/aPanel', 'AdminController@index');
+Route::get('/users/{id}', 'AdminController@show');
+
+Route::patch('/users/{id}', 'AdminController@update');
+
+Route::delete('/users/{id}', 'AdminController@delete');
