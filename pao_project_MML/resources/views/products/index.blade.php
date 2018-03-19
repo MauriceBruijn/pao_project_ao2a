@@ -17,8 +17,11 @@
 							<th>MERK</th>
 							<th>KLEUR</th>
 							<th>PRIJS</th>
-							<th></th>
-							<th></th>
+							
+							@if (Auth::user()->rank >= 1)
+								<th></th>
+								<th></th>
+							@endif
 						</tr>
 						@foreach($products as $product)
 						<tr>
@@ -27,9 +30,14 @@
 							<td>{{$product->brand}}</td>
 							<td>{{$product->color}}</td>
 							<td>{{$product->price}}</td>
-
-							<td><a href="product/edit/{{$product->id}}" class="glyphicon glyphicon-pencil"> </a></td>
+						
+						@if (Auth::user()->rank >= 1)
+							<td>
+								<a href="product/edit/{{$product->id}}" class="glyphicon glyphicon-pencil"></a>
+							</td>
+						@endif
 							
+						@if (Auth::user()->rank >= 2)
 							<td>
 								<form action="delete/product/{{$product->id}}" method="post">
 								{{method_field('DELETE')}}
@@ -40,6 +48,7 @@
 									</button>
 								</form>
 							</td>
+						@endif
 							
 						</tr>
 						@endforeach
@@ -47,15 +56,17 @@
 						
 					</div>
 					
-					<div class="form-group">
-						<div class="col-md-8 col-md-offset-0">
-							<a href="product/new">
-								<button type="submit" class="btn btn-primary">
-									Toevoegen
-								</button>
-							</a>
+					@if (Auth::user()->rank >= 1)
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-0">
+								<a href="product/new">
+									<button type="submit" class="btn btn-primary">
+										Toevoegen
+									</button>
+								</a>
+							</div>
 						</div>
-					</div>
+					@endif
 							
                 </div>
             </div>
