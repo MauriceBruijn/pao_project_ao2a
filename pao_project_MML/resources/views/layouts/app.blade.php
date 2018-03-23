@@ -41,7 +41,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-						<li><a href="{{ url('/products') }}">products</a></li>
+						<li><a href="{{ url('/products') }}">Products</a></li>
 						
 						@if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
