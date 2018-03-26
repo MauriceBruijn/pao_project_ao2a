@@ -6744,9 +6744,8 @@ button.close {
 }
 
 .products_title {
-    text-align: center;
     width: 100%;
-    padding-bottom: 0.5%;
+    padding-bottom: 2%;
     padding-top: 0.5%;
     margin-bottom: 1%;
     background: #FFFFFF;
@@ -6763,16 +6762,20 @@ button.close {
     background-color: #EFEFEF;
 }
 
-.products_title a {
-    /*float: right;*/
-    /*margin-right: 5px;*/
-    /*margin-top: 3px;*/
+.table_product_details {
+	width: 65% !important;
+	float: right;
+	margin-top: 5%;
 }
+
+
+
 /* @LENNART */
 .product{
     margin-top: 25px;
 }
-.product_image , .product_info , .product_price{
+.product_image {
     display: table-cell;
     padding: 25px;
+	position: absolute;
 }
