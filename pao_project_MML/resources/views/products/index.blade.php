@@ -18,8 +18,8 @@
 					</div>
 					
 					<ul>
-						<li><i class="glyphicon glyphicon-print"></i>{{$product->brand}}</li>
-						<li><i class="glyphicon glyphicon-time"></i>{{$product->color}}</li>
+						<li><i class="fa">&#xf2b4;</i>{{$product->brand}}</li>
+						<li><i class="material-icons">&#xe23a;</i>{{$product->color}}</li>
 						
 						@if (Auth::user()->rank >= 1)
 							<li><a href="product/edit/{{$product->id}}" class="glyphicon glyphicon-pencil"></a></li>
@@ -40,7 +40,14 @@
 					</ul>
 					
 					<div class="pricing-footer">
-						<a href="product/get/{{$product->id}}" class="btn btn-primary">VIEW</a>
+						<a href="product/get/{{$product->id}}" class="btn btn-primary"><i class="material-icons">&#xe8cc;</i> <b>CART</b></a>
+					</div>
+					
+					<div class="cards">
+						<i style="font-size:24px" class="fa">&#xf1f3;</i> 
+						<i style="font-size:24px" class="fa">&#xf1f2;</i> 
+						<i style="font-size:24px" class="fa">&#xf1f4;</i> 
+						<i style="font-size:24px" class="fa">&#xf1f0;</i>
 					</div>
 				</div>
 			</div>
