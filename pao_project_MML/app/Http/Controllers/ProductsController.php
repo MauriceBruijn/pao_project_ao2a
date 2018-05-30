@@ -10,8 +10,16 @@ class ProductsController extends Controller
 {
 	public function index()
 	{
-		$products = Products::all();
+		$products = DB::table('products')->paginate(8);
 		return view('products.index', compact('products'));
+	}
+	
+	public function productSearch(Request $request)
+	{
+		$product = $request->get('search');
+		$products = Products::where('name', 'like', "$product%")->get();
+		
+		return Response($products);
 	}
 
     public function edit($id)

@@ -15,6 +15,7 @@ Auth::routes();
 Route::get('/', 'ProductsController@index');
 
 Route::get('/products', 'ProductsController@index');
+Route::get('/product_search', 'ProductsController@productSearch');
 Route::get('/product/get/{id}', 'ProductsController@product');
 Route::get('/product/new', 'ProductsController@newProduct');
 Route::get('/product/edit/{id}', 'ProductsController@edit');
